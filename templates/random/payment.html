@@ -1,0 +1,54 @@
+{% extends 'customer/customer_base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+<head>
+
+</head>
+<style media="screen">
+
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+</style>
+<br><br>
+<center><i>This is your payment. We ensure you, your card is safe here ;)</i></center>
+<br><br>
+<div class="container" style="text-align:center; padding-left:300px;">
+    <div class="row">
+        <div class="col-xs-12 col-md-4" style="height:500px; width:600px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in payment_form %}
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}">ㅤㅤㅤㅤ</label>
+                            {% render_field field class="form-control" placeholder=field.label %}
+                            {% for error in field.errors %}
+                            <p class="error-message">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                        <a href="/payment-success">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Pay</button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right">{{total}}</span> Final Payment</a>
+                </li>
+            </ul>
+            <br/>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

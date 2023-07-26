@@ -1,0 +1,31 @@
+{% extends 'common/homebase.html' %}
+
+{% block content %}
+  <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center" style="color: #68d4ec;">Send Feedback</h2>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+              <label for="{{ feedback_form.name.id_for_label }}" style="color: #68d4ec;">Name:</label>
+            <label>
+                <input type="text" name="{{ feedback_form.name.name }}" style="width: 200px; height: 35px;" placeholder="Enter your name">
+            </label>
+        </div>
+
+        <div class="form-group">
+          <label for="{{ feedback_form.feedback.id_for_label }}" style="color: #68d4ec;">Feedback:</label>
+          <textarea class="form-control" id="{{ feedback_form.feedback.id_for_label }}" name="{{ feedback_form.feedback.html_name }}" style="width: 651px; height: 300px;" placeholder="Tell us how you feel using our services..."></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+

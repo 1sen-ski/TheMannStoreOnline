@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/D4ZX4Rn/Saxton-Hale-Portrait-fotor-bg-remover-20230723103343.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>The Mann Store</title>
+  <style media="screen">
+      body {
+    background-color: #202334;
+    color: white;
+}
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-color:#202334;">
+  {%if request.user.is_authenticated%}
+    {% include "customer/customer_navbar.html" %}
+  {%else%}
+    {% include "common/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <div id="about-us" style="background-color: #0e1330;
+    border-radius: 10px;
+    width: 1700px;
+    padding: 5px;
+    height: 235px;
+    margin: auto;
+    border: 3px solid #60d4ec;
+    margin-top: 150px;
+    ">
+<h3 style="text-align:center;color: white; font-size: xx-large">"We are the men from The Mann Store. Our store ensures quality products being delivered to customers all across the world. We partially produce our own products, some are made from our business partners. We found our company in 2012. The reason? We want money, lol. Also, quality for our customers. Our delivery system is with turbo planes that develop 1200km/h. They drop the ordered package on the adress to the customer with an air drop with calculated XYZ coordinates. Enjoy you stay! And happy buying!" </h3>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "common/footer_cart.html" %}
+</body>
+
+</html>

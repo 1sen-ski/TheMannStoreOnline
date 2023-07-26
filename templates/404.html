@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error 404</title>
+    <style>
+        body {
+            background-color: #202334;
+            color: #60d4ec;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: red;
+            font-size: 80px;
+        }
+
+        p {
+            font-size: 40px;
+        }
+
+        a {
+            color:cadetblue;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Error!</h1>
+    <p>The Mann Store broke somehow!<br> How is this possible?! Anyways here is your redirect link:</p>
+    <a href="{% url 'home' %}">>>Main Page<<</a>
+</body>
+</html>

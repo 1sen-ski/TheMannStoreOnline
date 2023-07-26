@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+
+  web:
+    image: asenski1944/themannstore
+    command: gunicorn --bind=0.0.0.0:8000 ecommerce.wsgi:application
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./envs/.env
+    volumes:
+      - /tmp/ecommerce/static_files:/app/static_files
+  postgres:
+    env_file:
+      - ./envs/.env
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx
+    ports:
+      - "81:80"
+      - "443:443"
+    volumes:
+      - /tmp/ecommerce/static_files:/home/app/web/staticfiles
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    links:
+      - web

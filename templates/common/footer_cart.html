@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mann Store</title>
+
+</head>
+<body>
+
+
+
+<style>
+
+
+footer{
+    color: white;
+    background-color: #0f111e;
+    line-height: 50px;
+    margin: -20px;
+    height: 460px;
+
+}
+
+#footer-p {
+    padding-left: 55px;
+    font-size: medium;
+    padding-top: 20px;
+}
+
+#footer-logo-img {
+    padding-left: 55px;
+    padding-top: 40px;
+    height: auto;
+    width: 340px;
+}
+
+#copyright {
+    padding-left: 55px;
+    font-size: small;
+}
+
+#themannstore {
+    color: aqua;
+}
+
+p {
+    text-align: left;
+    margin: 0 0 -30px;
+}
+
+#community {
+    float: right;
+    padding-right: 120px;
+    margin-top: -220px;
+    font-size: 22px;
+}
+
+#links {
+    padding-right: 110px;
+    float: right;
+    margin-top: -140px;
+    font-size: xx-large;
+}
+
+.link-icons {
+    padding: 10px;
+    color: white;
+}
+
+
+
+#terms-of-service {
+    font-size: large;
+    margin-right: 130px;
+    margin-top: 15px;
+    color: white;
+    float: right;
+}
+
+.fa-instagram {
+    background: #0f111e;
+    color: white;
+}
+</style>
+
+
+
+<div></div>
+    <footer>
+    <img id="footer-logo-img" src="{% static 'static_pics/site logo dark.png' %}" alt="">
+        <div id="footer-p">
+        The Mann Store is operated by Asen Velkov Holding Limited, Kitpanoros, EVI BUILDING, Floor 2, Flat/Office 201, <br> Sofia, Bulgaria (Company Registration No. 1944144)
+        </div>
+
+    <p id="copyright">
+       <br> Copyright © 2023 <a id="themannstore" href="{% url 'home' %}">TheMannStore.bg.</a> All Rights reserved.
+    </p>
+
+    <p id="community">
+        Community
+    </p>
+
+    <div id="links">
+
+            <a class="link-icons" href="https://discord.com" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a>
+
+            <a class="link-icons" href="https://steamcommunity.com/id/gg75" target="_blank" rel="noopener"><i class="fa-brands fa-steam"></i></a>
+
+            <a class="link-icons" href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+
+    </div>
+
+
+        <a id="terms-of-service" href="{% url 'about_us' %}">About us</a>
+
+
+    </footer>
+
+
+
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/86b1fc60ea.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
